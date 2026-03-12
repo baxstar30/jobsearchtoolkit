@@ -2138,8 +2138,8 @@ document.getElementById('run-ats-btn').addEventListener('click', async () => {
   document.getElementById('ats-result').classList.remove('visible');
   const systemPrompt = 'You are an expert ATS analyst. Be precise, data-driven, and honest. Never inflate scores or suggest fabricating experience.';
   const resumeBlock = resumeTexts.map(r => r.label + '\n---\n' + r.text).join('\n\n======\n\n');
-  const userMsg = ['JOB DESCRIPTION:', jd, savedRoleName ? 'Role: ' + savedRoleName : null, 'RESUMES TO ANALYZE:', resumeBlock,
-    'For each resume give an ATS score 0-100% based strictly on what is actually in the resume. Output each score on its own line exactly like: SCORE: [Resume Name] = [XX]%\n\nFor each resume also output the realistic improved score if honest keyword wordsmithing were applied: IMPROVED_SCORE: [Resume Name] = [XX]%\n\nThen output the following four sections with EXACTLY these headers:\n\n## BEST MATCH\n[Which resume scored highest and a 2-3 sentence explanation of why it fits best]\n\n## MISSING KEYWORDS\n[Bulleted list of keywords from the JD not present in the resumes]\n\n## RED FLAGS & WINS\n[Use ✅ for strengths and ❌ for gaps — one per line]\n\n## FASTEST PATH TO 95%+\n[Specific, honest edits that could raise the score using only wordsmithing of existing experience]\n\nIMPORTANT: Only flag genuine gaps. Do not suggest adding industries, titles, credentials, or skills not evidenced in the resume.'
+  const userMsg = ['JOB DESCRIPTION:', jd, savedRoleName ? 'Role: ' + savedRoleName : null, 'RESUMES TO ANALYZE:', resumeBlock, 'IMPORTANT: Use these exact resume names in your SCORE and IMPROVED_SCORE lines: ' + resumeTexts.map(r => r.label).join(', '),
+    'For each resume give an ATS score 0-100% based strictly on what is actually in the resume. Output each score on its own line EXACTLY like this (use the exact resume name as listed above): SCORE: [Exact Resume Name] = [XX]%\n\nFor each resume also output the realistic improved score if honest keyword wordsmithing were applied: IMPROVED_SCORE: [Exact Resume Name] = [XX]%\n\nThen output the following four sections with EXACTLY these headers:\n\n## BEST MATCH\n[Which resume scored highest and a 2-3 sentence explanation of why it fits best]\n\n## MISSING KEYWORDS\n[Bulleted list of keywords from the JD not present in the resumes]\n\n## RED FLAGS & WINS\n[Use ✅ for strengths and ❌ for gaps — one per line]\n\n## FASTEST PATH TO 95%+\n[Specific, honest edits that could raise the score using only wordsmithing of existing experience]\n\nIMPORTANT: Only flag genuine gaps. Do not suggest adding industries, titles, credentials, or skills not evidenced in the resume.'
   ].filter(Boolean).join('\n\n');
   try {
     document.getElementById('ats-result').classList.add('visible');
@@ -2155,7 +2155,8 @@ document.getElementById('run-ats-btn').addEventListener('click', async () => {
         const improvedMap = {};
         improvedMatches.forEach(m => { improvedMap[m[1].trim()] = parseInt(m[2]); });
         scoreMatches.forEach(match => {
-          const name = match[1].trim(), pct = parseInt(match[2]);
+          const name = match[1].trim();
+          const pct = parseInt(match[2]);
           const colorClass = pct >= 80 ? 'score-high' : pct >= 60 ? 'score-mid' : 'score-low';
           let improved = improvedMap[name];
           if (!improved) {
@@ -2163,8 +2164,13 @@ document.getElementById('run-ats-btn').addEventListener('click', async () => {
               if (name.includes(k) || k.includes(name)) { improved = v; break; }
             }
           }
-          const improvedHtml = improved ? '<div class="score-improved-inline">↑ ' + improved + '% with edits</div>' : '';
-          document.getElementById('score-cards-container').innerHTML += '<div class="score-card"><div class="score-num ' + colorClass + '">' + pct + '%</div>' + improvedHtml + '<div class="score-label">' + name + '</div></div>';
+          const improvedHtml = improved ? `<div class="score-improved-inline">↑ ${improved}% with edits</div>` : '';
+          document.getElementById('score-cards-container').innerHTML += `
+            <div class="score-card">
+              <div class="score-num ${colorClass}">${pct}%</div>
+              ${improvedHtml}
+              <div class="score-label">${name}</div>
+            </div>`;
           if (pct > highestPct) { highestPct = pct; highestLabel = name;
             for (const [label, key] of Object.entries(resumeKeyMap)) { if (name.includes(label) || label.includes(name)) { highestKey = key; break; } }
           }
