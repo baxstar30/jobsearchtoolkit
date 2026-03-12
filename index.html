@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cara Brown — Job Application Toolkit</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Open+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   /* ═══════════════════════════════════════════════
      CARA BROWN JOB TOOLKIT — COMPLETE DESIGN SYSTEM
@@ -75,7 +75,7 @@
     color: #ccbbaa;
   }
   header .sub {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.72rem;
     color: #888888;
     letter-spacing: 0.12em;
@@ -113,8 +113,9 @@
     color: #aaaaaa;
     text-decoration: none;
     font-size: 0.87rem;
-    letter-spacing: 0.04em;
-    font-family: 'DM Mono', monospace;
+    letter-spacing: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     transition: all 0.15s;
     cursor: pointer;
   }
@@ -134,9 +135,10 @@
   nav ul li a.active .num { color: #888888; }
   .nav-section {
     padding: 1.2rem 1.6rem 0.4rem;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.67rem;
-    letter-spacing: 0.2em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #444444;
   }
@@ -183,7 +185,7 @@
   /* ─── FORM ELEMENTS ─── */
   label {
     display: block;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -251,7 +253,7 @@
     padding: 0.35rem 0.9rem;
     border: 1px solid var(--border);
     border-radius: 20px;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.62rem;
     color: var(--mid);
     cursor: pointer;
@@ -286,7 +288,7 @@
 
   .score-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(172.5px, 1fr));
     gap: 1rem;
     margin-bottom: 1.5rem;
   }
@@ -294,33 +296,42 @@
     background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 1rem;
+    padding: 1.15rem;
     text-align: center;
     transition: transform 0.15s;
   }
   .score-card:hover { transform: translateY(-2px); }
   .score-card .score-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
+    font-size: 2.53rem;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 0.3rem;
   }
   .score-card .score-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
     color: var(--mid);
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     text-transform: uppercase;
     line-height: 1.4;
   }
   .score-improved {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.67rem;
     color: var(--green);
     font-weight: 600;
     margin: 0.25rem 0 0.1rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
+  }
+  .score-improved-inline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.64rem;
+    color: var(--green);
+    font-weight: 600;
+    margin: 0.3rem 0 0.2rem 0;
+    letter-spacing: 0;
   }
   .score-high { color: var(--green); }
   .score-mid  { color: var(--amber); }
@@ -340,7 +351,7 @@
     align-items: center;
     gap: 0.8rem;
     color: var(--mid);
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.68rem;
     letter-spacing: 0.08em;
     margin-top: 1rem;
@@ -362,7 +373,7 @@
     background: transparent;
     border: 1px solid var(--border);
     color: var(--mid);
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     cursor: pointer;
     border-radius: 3px;
     letter-spacing: 0.06em;
@@ -387,50 +398,69 @@
     font-size: 0.88rem;
     line-height: 1.75;
     color: var(--black);
-    white-space: pre-wrap;
     min-height: 40px;
+  }
+  .ats-result-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
   .ats-formatted { font-size: 0.88rem; line-height: 1.6; }
   .ats-heading {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: var(--black);
-    margin: 1.2rem 0 0.4rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--border);
+    margin: 0 0 1.2rem 0;
+    padding-bottom: 0;
+    grid-column: 1 / -1;
+    letter-spacing: -0.01em;
   }
   .ats-subhead {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--black);
-    margin: 0.8rem 0 0.3rem;
+    margin: 1.2rem 0 0.6rem 0;
+    grid-column: 1 / -1;
+  }
+  .ats-paragraph {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--mid);
+    margin-bottom: 0.8rem;
+    grid-column: 1 / -1;
   }
   .ats-line {
-    padding: 0.3rem 0;
+    padding: 0.6rem 1rem;
     color: var(--black);
-    border-bottom: 1px solid #f0f0f0;
+    margin: 0.5rem 0;
+    border-radius: 3px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .ats-bullet {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--black);
+    margin: 0.4rem 0 0.4rem 1rem;
+    padding-left: 0.8rem;
+    border-left: 2px solid #e0e0e0;
   }
   .ats-win {
     background: var(--greenlt);
     border-left: 3px solid var(--green);
-    padding: 0.4rem 0.8rem;
-    margin: 0.3rem 0;
     color: var(--green);
-    border-bottom: none;
-    border-radius: 0 3px 3px 0;
   }
   .ats-warn {
     background: #fff8f0;
     border-left: 3px solid #cc8800;
-    padding: 0.4rem 0.8rem;
-    margin: 0.3rem 0;
     color: #7a5000;
-    border-bottom: none;
-    border-radius: 0 3px 3px 0;
   }
 
   /* ─── TABS ─── */
@@ -442,9 +472,10 @@
   }
   .tab {
     padding: 0.55rem 1.1rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.07em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0;
     text-transform: uppercase;
     color: var(--mid);
     cursor: pointer;
@@ -462,7 +493,7 @@
     background: var(--bgoff);
     border: 1px solid var(--border);
     border-radius: 3px;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.58rem;
     color: var(--mid);
     letter-spacing: 0.04em;
@@ -480,7 +511,7 @@
   .error-msg {
     color: var(--red);
     font-size: 0.78rem;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     margin-top: 0.5rem;
     display: none;
   }
@@ -518,7 +549,7 @@
   .modal-box a { color: var(--black); }
   .modal-close { float: right; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--mid); }
   .key-status {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.08em;
     padding: 0.35rem 0.7rem;
@@ -535,7 +566,7 @@
     background: transparent;
     border: 1px solid #444444;
     color: #aaaaaa;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.74rem;
     letter-spacing: 0.08em;
     padding: 0.55rem 1.1rem;
@@ -573,7 +604,7 @@
     margin-bottom: 0.3rem;
   }
   .stat-label {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.55rem;
     color: #aaaaaa;
     letter-spacing: 0.1em;
@@ -581,7 +612,7 @@
     line-height: 1.4;
   }
   .stat-sub {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.52rem;
     color: #888888;
     margin-top: 0.3rem;
@@ -594,7 +625,7 @@
     padding: 1rem 1.2rem;
   }
   .goal-bar-label {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.6rem;
     color: var(--mid);
     letter-spacing: 0.08em;
@@ -640,7 +671,7 @@
     font-size: 0.82rem;
   }
   .jobs-table th {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.55rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -665,7 +696,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.2rem;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.48rem;
     color: var(--mid);
     letter-spacing: 0.04em;
@@ -689,7 +720,7 @@
   }
   .delete-job-btn:hover { color: var(--red); }
   .applied-date {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.6rem;
     color: var(--mid);
     white-space: nowrap;
@@ -700,7 +731,7 @@
     text-align: center;
     padding: 3rem;
     color: var(--mid);
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.08em;
   }
@@ -721,12 +752,13 @@
   }
   .edit-block-header {
     background: var(--bgoff);
-    padding: 0.5rem 1rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mid);
+    padding: 0.7rem 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--black);
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
@@ -735,11 +767,12 @@
   .edit-section-label {
     background: var(--dark);
     color: #ffffff;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    padding: 0.2rem 0.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
     border-radius: 2px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
   }
   .edit-row-before {
     background: var(--redlt);
@@ -771,7 +804,7 @@
     line-height: 1.5;
   }
   .edit-label {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.52rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -797,7 +830,7 @@
     line-height: 1;
   }
   .edits-summary-bar .summary-text {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.6rem;
     color: var(--mid);
     letter-spacing: 0.06em;
@@ -812,7 +845,7 @@
     line-height: 1;
   }
   .projected-score .score-tiny {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.52rem;
     color: var(--mid);
     text-transform: uppercase;
@@ -830,21 +863,21 @@
   /* Job detail row */
   .job-detail-row td { padding: 0.4rem 0.75rem 0.75rem 0.75rem; background: var(--bgoff); }
   .job-detail-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .detail-chip { font-size: 0.72rem; font-family: 'DM Mono', monospace; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 0.2rem 0.65rem; color: var(--mid); white-space: nowrap; }
+  .detail-chip { font-size: 0.72rem; font-family: 'Raleway', sans-serif; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 0.2rem 0.65rem; color: var(--mid); white-space: nowrap; }
   .job-main-row { cursor: pointer; }
   .job-main-row:hover td { background: #f9f9f7; }
 
   /* Resume upload slots */
   .resume-slot { border: 1px solid var(--border); border-radius: 4px; margin-bottom: 1.2rem; overflow: hidden; }
   .resume-slot-header { background: var(--bgoff); padding: 0.8rem 1.2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); gap: 0.5rem; }
-  .resume-slot-title { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); }
-  .resume-slot-title-input { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); border: 1px solid var(--border); border-radius: 3px; padding: 0.3rem 0.5rem; background: #fff; min-width: 0; flex: 1; margin-bottom: 0; }
+  .resume-slot-title { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); }
+  .resume-slot-title-input { font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); border: 1px solid var(--border); border-radius: 3px; padding: 0.3rem 0.5rem; background: #fff; min-width: 0; flex: 1; margin-bottom: 0; }
   .resume-slot-title-input:focus { border-color: var(--black); outline: none; }
-  .resume-slot-status { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.05em; padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap; }
+  .resume-slot-status { font-family: 'Raleway', sans-serif; font-size: 0.62rem; letter-spacing: 0.05em; padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap; }
   .slot-status-custom { background: var(--greenlt); color: var(--green); }
   .slot-status-default { background: var(--bgdark); color: var(--mid); }
   .resume-slot-body { padding: 1rem 1.2rem 1rem; display: flex; flex-direction: column; gap: 0; }
-  .upload-drop-zone { flex: 1; min-width: 200px; border: 2px dashed var(--border); border-radius: 4px; padding: 1.2rem; text-align: center; cursor: pointer; transition: border-color 0.15s, background 0.15s; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--mid); letter-spacing: 0.06em; }
+  .upload-drop-zone { flex: 1; min-width: 200px; border: 2px dashed var(--border); border-radius: 4px; padding: 1.2rem; text-align: center; cursor: pointer; transition: border-color 0.15s, background 0.15s; font-family: 'Raleway', sans-serif; font-size: 0.65rem; color: var(--mid); letter-spacing: 0.06em; }
   .upload-drop-zone:hover, .upload-drop-zone.dragover { border-color: var(--black); background: var(--bgoff); color: var(--black); }
   .upload-drop-zone input[type="file"] { display: none; }
   .slot-preview { font-size: 0.78rem; color: var(--mid); line-height: 1.5; max-height: 72px; overflow: hidden; font-family: 'Instrument Sans', sans-serif; font-style: italic; margin-bottom: 0; }
@@ -852,17 +885,17 @@
   .slot-actions { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; margin-top: 0.8rem; }
   .upload-trigger-btn { background: var(--black) !important; color: #fff !important; border-color: var(--black) !important; }
   .upload-trigger-btn:hover { background: var(--dark) !important; }
-  .slot-btn { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.06em; padding: 0.3rem 0.8rem; border: 1px solid var(--border); background: transparent; color: var(--mid); cursor: pointer; border-radius: 3px; white-space: nowrap; transition: all 0.15s; text-transform: uppercase; }
+  .slot-btn { font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.06em; padding: 0.3rem 0.8rem; border: 1px solid var(--border); background: transparent; color: var(--mid); cursor: pointer; border-radius: 3px; white-space: nowrap; transition: all 0.15s; text-transform: uppercase; }
   .slot-btn:hover { border-color: var(--black); color: var(--black); }
   .slot-btn.danger:hover { border-color: var(--red); color: var(--red); }
   .slot-paste-area { width: 100%; margin-top: 0.5rem; display: none; }
   .slot-paste-area textarea { margin-bottom: 0.5rem; min-height: 120px; font-size: 0.8rem; }
 
   /* Tracker extras */
-  .tracker-section-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
+  .tracker-section-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
   .quote-block { padding: 0.5rem 0 1.5rem 0; margin: 0 0 0.5rem 0; text-align: left; min-height: 60px; }
   .quote-text { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; font-style: italic; line-height: 1.4; color: var(--black); transition: opacity 0.5s ease; display: block; margin-bottom: 0.4rem; }
-  .quote-author { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); transition: opacity 0.5s ease; display: block; }
+  .quote-author { font-family: 'Raleway', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); transition: opacity 0.5s ease; display: block; }
 
   /* ATS result formatting */
   .ats-result-section { padding: 0.2rem 0; }
@@ -934,7 +967,7 @@
     <div class="btn-row">
       <button class="btn" id="save-resume-links-btn">Save Resume Links</button>
     </div>
-    <div id="resume-links-saved-msg" style="display:none;margin-top:0.8rem;color:var(--success);font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;">✓ LINKS SAVED</div>
+    <div id="resume-links-saved-msg" style="display:none;margin-top:0.8rem;color:var(--success);font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.1em;">✓ LINKS SAVED</div>
   </div>
 </div>
 
@@ -1109,7 +1142,7 @@
         <div class="btn-row" style="margin-top:0.8rem;">
           <button class="btn" id="add-resume-btn">Add Resume</button>
         </div>
-        <div id="add-resume-msg" style="display:none;margin-top:0.8rem;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;"></div>
+        <div id="add-resume-msg" style="display:none;margin-top:0.8rem;font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.1em;"></div>
       </div>
     </div>
 
@@ -1130,7 +1163,7 @@
       <div class="btn-row">
         <button class="btn" id="save-jd-btn">Save & Continue →</button>
       </div>
-      <div id="jd-saved-msg" style="display:none; margin-top:1rem; color: var(--success); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em;">✓ JOB DESCRIPTION SAVED</div>
+      <div id="jd-saved-msg" style="display:none; margin-top:1rem; color: var(--success); font-family: 'Raleway', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em;">✓ JOB DESCRIPTION SAVED</div>
     </div>
 
     <!-- ── PANEL 2: ATS CHECK ── -->
@@ -2106,7 +2139,7 @@ document.getElementById('run-ats-btn').addEventListener('click', async () => {
   const systemPrompt = 'You are an expert ATS analyst. Be precise, data-driven, and honest. Never inflate scores or suggest fabricating experience.';
   const resumeBlock = resumeTexts.map(r => r.label + '\n---\n' + r.text).join('\n\n======\n\n');
   const userMsg = ['JOB DESCRIPTION:', jd, savedRoleName ? 'Role: ' + savedRoleName : null, 'RESUMES TO ANALYZE:', resumeBlock,
-    'For each resume give an ATS score 0-100% based strictly on what is actually in the resume. Output each score on its own line exactly like: SCORE: [Resume Name] = [XX]%\n\nThen output the following four sections with EXACTLY these headers:\n\n## BEST MATCH\n[Which resume scored highest and a 2-3 sentence explanation of why it fits best]\n\n## MISSING KEYWORDS\n[Bulleted list of keywords from the JD not present in the resumes]\n\n## RED FLAGS & WINS\n[Use checkmarks for strengths and x marks for gaps — one per line]\n\n## FASTEST PATH TO 95%+\n[Specific, honest edits that could raise the score using only wordsmithing of existing experience]\n\nIMPORTANT: Only flag genuine gaps. Do not suggest adding industries, titles, credentials, or skills not evidenced in the resume.'
+    'For each resume give an ATS score 0-100% based strictly on what is actually in the resume. Output each score on its own line exactly like: SCORE: [Resume Name] = [XX]%\n\nFor each resume also output the realistic improved score if honest keyword wordsmithing were applied: IMPROVED_SCORE: [Resume Name] = [XX]%\n\nThen output the following four sections with EXACTLY these headers:\n\n## BEST MATCH\n[Which resume scored highest and a 2-3 sentence explanation of why it fits best]\n\n## MISSING KEYWORDS\n[Bulleted list of keywords from the JD not present in the resumes]\n\n## RED FLAGS & WINS\n[Use ✅ for strengths and ❌ for gaps — one per line]\n\n## FASTEST PATH TO 95%+\n[Specific, honest edits that could raise the score using only wordsmithing of existing experience]\n\nIMPORTANT: Only flag genuine gaps. Do not suggest adding industries, titles, credentials, or skills not evidenced in the resume.'
   ].filter(Boolean).join('\n\n');
   try {
     document.getElementById('ats-result').classList.add('visible');
@@ -2118,10 +2151,20 @@ document.getElementById('run-ats-btn').addEventListener('click', async () => {
         let highestPct = 0, highestKey = null, highestLabel = null;
         const resumeKeyMap = {};
         for (const [key, val] of Object.entries(RESUMES)) resumeKeyMap[val.label] = key;
+        const improvedMatches = [...text.matchAll(/IMPROVED_SCORE:\s*(.+?)\s*=\s*(\d+)%/g)];
+        const improvedMap = {};
+        improvedMatches.forEach(m => { improvedMap[m[1].trim()] = parseInt(m[2]); });
         scoreMatches.forEach(match => {
           const name = match[1].trim(), pct = parseInt(match[2]);
           const colorClass = pct >= 80 ? 'score-high' : pct >= 60 ? 'score-mid' : 'score-low';
-          document.getElementById('score-cards-container').innerHTML += '<div class="score-card"><div class="score-num ' + colorClass + '">' + pct + '%</div><div class="score-label">' + name + '</div></div>';
+          let improved = improvedMap[name];
+          if (!improved) {
+            for (const [k,v] of Object.entries(improvedMap)) {
+              if (name.includes(k) || k.includes(name)) { improved = v; break; }
+            }
+          }
+          const improvedHtml = improved ? '<div class="score-improved-inline">↑ ' + improved + '% with edits</div>' : '';
+          document.getElementById('score-cards-container').innerHTML += '<div class="score-card"><div class="score-num ' + colorClass + '">' + pct + '%</div>' + improvedHtml + '<div class="score-label">' + name + '</div></div>';
           if (pct > highestPct) { highestPct = pct; highestLabel = name;
             for (const [label, key] of Object.entries(resumeKeyMap)) { if (name.includes(label) || label.includes(name)) { highestKey = key; break; } }
           }
@@ -2214,9 +2257,23 @@ Be specific and direct.`;
     readyOut.textContent = '';
 
     let fullText = '';
+    let formatRecheckContent = function(raw) {
+      if (!raw) return '';
+      return '<div class="ats-result-section">' + raw.split('\n').map(line => {
+        const t = line.trim(); if (!t) return '';
+        if (/^#{1,3}\s/.test(t)) return '<div class="ats-heading">' + t.replace(/^#+\s*/,'').replace(/\*\*/g,'') + '</div>';
+        if (t.startsWith('**') && t.endsWith('**')) return '<div class="ats-subhead">' + t.replace(/\*\*/g,'') + '</div>';
+        if (/^[\u2713\u2714\u2705✅]/.test(t)) return '<div class="ats-line ats-win">' + t + '</div>';
+        if (/^[\u2717\u2718\u274C❌⚠️🚩]/.test(t)) return '<div class="ats-line ats-warn">' + t + '</div>';
+        if (/^[-•*]\s/.test(t)) return '<div class="ats-bullet">' + t.replace(/^[-•*]\s*/,'') + '</div>';
+        if (/^\d+\.\s*\*\*/.test(t)) return '<div class="ats-subhead">' + t.replace(/^\d+\.\s*/,'').replace(/\*\*/g,'') + '</div>';
+        let html = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        return '<div class="ats-paragraph">' + html + '</div>';
+      }).join('') + '</div>';
+    };
     await callClaude(systemPrompt, userMsg, (text) => {
       fullText = text;
-      kwOut.textContent = text; // live stream visible
+      kwOut.innerHTML = formatRecheckContent(text);
     });
 
     // On complete, split into sections and populate tabs
@@ -2231,10 +2288,10 @@ Be specific and direct.`;
     const gaps = getSection(fullText, /REMAINING GAPS/i,      /READY TO SUBMIT/i);
     const ready= getSection(fullText, /READY TO SUBMIT/i,     null);
 
-    kwOut.textContent   = kw   || fullText;
-    impOut.textContent  = imp  || '';
-    gapsOut.textContent = gaps || '';
-    readyOut.textContent= ready|| '';
+    kwOut.innerHTML   = formatRecheckContent(kw   || fullText);
+    impOut.innerHTML  = formatRecheckContent(imp  || '');
+    gapsOut.innerHTML = formatRecheckContent(gaps || '');
+    readyOut.innerHTML= formatRecheckContent(ready|| '');
 
     // Wire up static tabs
     document.querySelectorAll('#recheck-tabs .tab').forEach(tab => {
@@ -2835,20 +2892,34 @@ document.getElementById('gen-salary-btn').addEventListener('click', async () => 
   const userMsg = ['Build a salary research brief and negotiation strategy for Cara Brown.', 'Role: ' + role, location ? 'Location: ' + location : null, companyType ? 'Company type: ' + companyType : null, offered ? 'Offered or mentioned: ' + offered : null, situation ? 'Situation: ' + situation : null, 'Cara: 15+ years, MBA, Principal-level, $270M enterprise impact, C-suite partnerships.',
     'Output EXACTLY these five sections with these headers:\n\n## FINAL POSITIONING\n[2-3 sentence confident summary]\n\n## MARKET RATE\n[Realistic salary ranges by level and sector]\n\n## CARAS NUMBERS\n[Target, floor, and stretch — specific dollar amounts]\n\n## NEGOTIATION SCRIPTS\n[Exact language for: salary expectations question, countering a lowball, asking for time, negotiating total comp]\n\n## TRAPS TO AVOID\n[3-4 specific mistakes and how to handle them]'
   ].filter(Boolean).join('\n\n');
-  ['positioning','market','numbers','scripts','traps'].forEach(tab => { const el = document.getElementById('salary-tab-' + tab); if (el) { el.textContent = ''; el.style.display = 'none'; } });
+  ['positioning','market','numbers','scripts','traps'].forEach(tab => { const el = document.getElementById('salary-tab-' + tab); if (el) { el.innerHTML = ''; el.style.display = 'none'; } });
   document.getElementById('salary-tab-positioning').style.display = 'block';
   document.querySelectorAll('#salary-result-tabs .tab').forEach((t,i) => t.classList.toggle('active', i===0));
+  let formatSalaryContent = function(raw) {
+    if (!raw) return '';
+    return '<div class="ats-result-section">' + raw.split('\n').map(line => {
+      const t = line.trim(); if (!t) return '';
+      if (/^#{1,3}\s/.test(t)) return '<div class="ats-heading">' + t.replace(/^#+\s*/,'').replace(/\*\*/g,'') + '</div>';
+      if (t.startsWith('**') && t.endsWith('**')) return '<div class="ats-subhead">' + t.replace(/\*\*/g,'') + '</div>';
+      if (/^[\u2713\u2714\u2705✅]/.test(t)) return '<div class="ats-line ats-win">' + t + '</div>';
+      if (/^[\u2717\u2718\u274C❌⚠️🚩]/.test(t)) return '<div class="ats-line ats-warn">' + t + '</div>';
+      if (/^[-•*]\s/.test(t)) return '<div class="ats-bullet">' + t.replace(/^[-•*]\s*/,'') + '</div>';
+      if (/^\d+\.\s*\*\*/.test(t)) return '<div class="ats-subhead">' + t.replace(/^\d+\.\s*/,'').replace(/\*\*/g,'') + '</div>';
+      let html = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      return '<div class="ats-paragraph">' + html + '</div>';
+    }).join('') + '</div>';
+  };
   try {
     document.getElementById('salary-result').classList.add('visible');
     let fullSalText = '';
-    await callClaude(systemPrompt, userMsg, text => { fullSalText = text; document.getElementById('salary-tab-positioning').textContent = text; });
+    await callClaude(systemPrompt, userMsg, text => { fullSalText = text; document.getElementById('salary-tab-positioning').innerHTML = formatSalaryContent(text); });
     function salSection(txt, startRe, endRe) { const sm = txt.search(startRe); if (sm < 0) return txt; const em = endRe ? txt.search(endRe) : -1; return (em > sm ? txt.substring(sm, em) : txt.substring(sm)).replace(/^##\s*/gm,'').replace(/\*\*/g,'').trim(); }
-    document.getElementById('salary-tab-positioning').textContent = salSection(fullSalText, /##\s*FINAL POSITIONING/i, /##\s*MARKET RATE/i);
-    document.getElementById('salary-tab-market').textContent = salSection(fullSalText, /##\s*MARKET RATE/i, /##\s*CARAS NUMBERS/i);
-    document.getElementById('salary-tab-numbers').textContent = salSection(fullSalText, /##\s*CARAS NUMBERS/i, /##\s*NEGOTIATION SCRIPTS/i);
-    document.getElementById('salary-tab-scripts').textContent = salSection(fullSalText, /##\s*NEGOTIATION SCRIPTS/i, /##\s*TRAPS TO AVOID/i);
-    document.getElementById('salary-tab-traps').textContent = salSection(fullSalText, /##\s*TRAPS TO AVOID/i, null);
-    document.getElementById('salary-active-output').textContent = document.getElementById('salary-tab-positioning').textContent;
+    document.getElementById('salary-tab-positioning').innerHTML = formatSalaryContent(salSection(fullSalText, /##\s*FINAL POSITIONING/i, /##\s*MARKET RATE/i));
+    document.getElementById('salary-tab-market').innerHTML = formatSalaryContent(salSection(fullSalText, /##\s*MARKET RATE/i, /##\s*CARAS NUMBERS/i));
+    document.getElementById('salary-tab-numbers').innerHTML = formatSalaryContent(salSection(fullSalText, /##\s*CARAS NUMBERS/i, /##\s*NEGOTIATION SCRIPTS/i));
+    document.getElementById('salary-tab-scripts').innerHTML = formatSalaryContent(salSection(fullSalText, /##\s*NEGOTIATION SCRIPTS/i, /##\s*TRAPS TO AVOID/i));
+    document.getElementById('salary-tab-traps').innerHTML = formatSalaryContent(salSection(fullSalText, /##\s*TRAPS TO AVOID/i, null));
+    document.getElementById('salary-active-output').innerHTML = document.getElementById('salary-tab-positioning').innerHTML;
   } catch (err) { showError('salary-error', 'Error: ' + err.message); document.getElementById('salary-result').classList.remove('visible');
   } finally { hideLoading('salary-loading'); }
 });
@@ -2874,11 +2945,26 @@ document.getElementById('gen-recruiter-btn').addEventListener('click', async () 
     'Provide: 1. SITUATION ASSESSMENT — what is likely happening  2. RECRUITER LEGITIMACY — for each recruiter: tier (primary/secondary/body shop), red flags, green flags  3. DUPLICATE SUBMISSION RISK — what happens if two agencies submit her, how to protect herself  4. WHO TO RESPOND TO — specific recommendation and in what order  5. QUESTIONS TO ASK BEFORE CONSENTING — exact questions to ask each recruiter  6. PROTOCOL GOING FORWARD — standard process to avoid this again'
   ].filter(Boolean).join('\n\n');
   
+  let formatRecruiterContent = function(raw) {
+    if (!raw) return '';
+    return '<div class="ats-result-section">' + raw.split('\n').map(line => {
+      const t = line.trim(); if (!t) return '';
+      if (/^#{1,3}\s/.test(t)) return '<div class="ats-heading">' + t.replace(/^#+\s*/,'').replace(/\*\*/g,'') + '</div>';
+      if (t.startsWith('**') && t.endsWith('**')) return '<div class="ats-subhead">' + t.replace(/\*\*/g,'') + '</div>';
+      if (/^[\u2713\u2714\u2705✅]/.test(t)) return '<div class="ats-line ats-win">' + t + '</div>';
+      if (/^[\u2717\u2718\u274C❌⚠️🚩]/.test(t)) return '<div class="ats-line ats-warn">' + t + '</div>';
+      if (/^[-•*]\s/.test(t)) return '<div class="ats-bullet">' + t.replace(/^[-•*]\s*/,'') + '</div>';
+      if (/^\d+\.\s*\*\*/.test(t)) return '<div class="ats-subhead">' + t.replace(/^\d+\.\s*/,'').replace(/\*\*/g,'') + '</div>';
+      let html = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      return '<div class="ats-paragraph">' + html + '</div>';
+    }).join('') + '</div>';
+  };
+  
   try {
     const output = document.getElementById('recruiter-output');
-    output.textContent = '';
+    output.innerHTML = '';
     document.getElementById('recruiter-result').classList.add('visible');
-    await callClaude(systemPrompt, userMsg, text => { output.textContent = text; });
+    await callClaude(systemPrompt, userMsg, text => { output.innerHTML = formatRecruiterContent(text); });
   } catch (err) {
     showError('recruiter-error', 'Error: ' + err.message);
     document.getElementById('recruiter-result').classList.remove('visible');
@@ -3078,7 +3164,7 @@ function renderEditBlocks(rawText, container) {
     const editId = 'edit-block-' + i;
     html += `<div class="edit-block" id="${editId}">
       <div class="edit-block-header">
-        <span>Edit ${i + 1}${section ? ' — ' + escHtml(section) : ''}</span>
+        <div><strong>Edit ${i + 1}</strong>${section ? '<br><span style="font-size:0.68rem;color:var(--mid);font-weight:400;">' + escHtml(section) + '</span>' : ''}</div>
       </div>
       <div class="edit-row-before"><span class="edit-label">Remove</span>${escHtml(before)}</div>
       <div class="edit-row-after" id="after-${i}"><span class="edit-label">Replace with</span><span class="after-text">${escHtml(after)}</span><button class="copy-btn" style="float:right;margin-left:0.5rem;padding:0.2rem 0.6rem;font-size:0.7rem;" onclick="var t=this.previousElementSibling.textContent;navigator.clipboard.writeText(t).then(function(){},function(){});this.textContent='Copied!';var b=this;setTimeout(function(){b.textContent='Copy'},2000)">Copy</button></div>
