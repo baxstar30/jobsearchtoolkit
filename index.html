@@ -2214,9 +2214,9 @@ document.getElementById('run-ats-btn').addEventListener('click', async () => {
           const improvedHtml = improved ? `<div class="score-improved-inline">↑ ${improved}% with edits</div>` : '';
           document.getElementById('score-cards-container').innerHTML += `
             <div class="score-card">
+              <div class="score-label" style="margin-bottom:0.4rem;">${name}</div>
               <div class="score-num ${colorClass}">${pct}%</div>
               ${improvedHtml}
-              <div class="score-label">${name}</div>
             </div>`;
           if (pct > highestPct) { highestPct = pct; highestLabel = name;
             for (const [label, key] of Object.entries(resumeKeyMap)) { if (name.includes(label) || label.includes(name)) { highestKey = key; break; } }
@@ -3316,20 +3316,6 @@ setInterval(showQuote, 8000);
 // ─── PAGE INIT ───────────────────────────────────────────────────────────────
 loadSavedResumes();
 buildUploadSlots();
-
-// Regenerate pills from RESUMES object
-for (const [key, resume] of Object.entries(RESUMES)) {
-  const name = resume.label;
-  const atsContainer = document.getElementById('ats-resume-pills');
-  const leContainer = document.getElementById('le-resume-pills');
-  const clContainer = document.getElementById('cl-resume-pills');
-  const intContainer = document.getElementById('interview-resume-pills');
-  if (atsContainer) atsContainer.insertAdjacentHTML('beforeend', `<div class="pill" data-resume="${key}">${escHtml(name)}</div>`);
-  if (leContainer) leContainer.insertAdjacentHTML('beforeend', `<div class="pill" data-resume="${key}">${escHtml(name)}</div>`);
-  if (clContainer) clContainer.insertAdjacentHTML('beforeend', `<div class="pill" data-resume="${key}">${escHtml(name)}</div>`);
-  if (intContainer) intContainer.insertAdjacentHTML('beforeend', `<div class="pill" data-resume="${key}">${escHtml(name)}</div>`);
-}
-attachPillListeners();
 
 const savedGoal = localStorage.getItem('cara_daily_goal');
 if (savedGoal) { const goalEl = document.getElementById('daily-goal-input'); if (goalEl) goalEl.value = savedGoal; }
